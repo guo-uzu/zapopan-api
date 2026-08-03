@@ -1,0 +1,7 @@
+services:
+  api:
+    image: "alexuzu/zapopan-api:v1"
+    ports:
+      - "80:80"
+    volumes:
+      - .
