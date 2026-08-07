@@ -1,7 +1,8 @@
 services:
   api:
-    image: "alexuzu/zapopan-api:v1"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: alexuzu/zapopan-api:v2
     ports:
-      - "80:80"
-    volumes:
-      - .
+      - "8080:8000"
