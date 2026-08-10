@@ -1,8 +1,14 @@
 services:
-  api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  zapopan-api:
     image: alexuzu/zapopan-api:v2
     ports:
       - "8080:8000"
+  cloudflared-tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare-tunnel
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run
+    depends_on:
+      - zapopan-api
