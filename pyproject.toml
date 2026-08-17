@@ -7,4 +7,5 @@ dependencies = [
     "pillow>=12.3.0",
     "pymupdf>=1.28.0",
     "python-multipart>=0.0.32",
+    "requests>=2.34.2",
 ]
